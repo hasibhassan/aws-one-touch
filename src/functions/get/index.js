@@ -4,7 +4,7 @@ const db = new AWS.DynamoDB.DocumentClient()
 async function read(id) {
   const params = {
     TableName: process.env.TABLE_NAME,
-    Key: { HashKey: id },
+    Key: { id },
   }
   try {
     const data = await db.get(params).promise()

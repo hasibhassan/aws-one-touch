@@ -16,7 +16,7 @@ plugins:
 functions:
   create: ${file(src/functions/create/function.yml):create}
   delete: ${file(src/functions/delete/function.yml):delete}
-  read: ${file(src/functions/get/function.yml):read}
+  get: ${file(src/functions/get/function.yml):get}
   update: ${file(src/functions/update/function.yml):update}
 
 custom:

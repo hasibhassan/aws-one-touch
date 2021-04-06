@@ -2,7 +2,7 @@ create:
   handler: src/functions/create/index.default
   events:
     - httpApi:
-      method: POST
-      path: /
+        method: POST
+        path: /
   environment:
-    TABLE_NAME: !Ref simpleCrudTable
+    TABLE_NAME: !Ref SimpleCrudTable
