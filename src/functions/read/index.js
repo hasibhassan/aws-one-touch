@@ -1,13 +1,14 @@
 import AWS from 'aws-sdk'
 const db = new AWS.DynamoDB.DocumentClient()
 
-async function createData(id, data) {
+async function read(id) {
   const params = {
     TableName: process.env.TABLE_NAME,
-    Item: { id, data },
+    Key: { HashKey: id },
   }
   try {
-    await db.put(params).promise()
+    const data = await db.get(params).promise()
+    return data
   } catch (err) {
     return err
   }
@@ -15,10 +16,8 @@ async function createData(id, data) {
 
 export default async (event) => {
   try {
-    const id = context.awsRequestId
-    const data = event.body
-    await createData(id, data)
-    return id
+    const result = await read(event.pathParameters.id)
+    return result.Item.data
   } catch (err) {
     return { error: err }
   }

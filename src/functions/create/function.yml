@@ -4,4 +4,5 @@ create:
     - httpApi:
       method: POST
       path: /
-  # environment:
+  environment:
+    TABLE_NAME: !Ref simpleCrudTable

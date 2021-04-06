@@ -1,13 +1,13 @@
 import AWS from 'aws-sdk'
 const db = new AWS.DynamoDB.DocumentClient()
 
-async function createData(id, data) {
+async function deleteData(id) {
   const params = {
     TableName: process.env.TABLE_NAME,
-    Item: { id, data },
+    Key: { HashKey: id },
   }
   try {
-    await db.put(params).promise()
+    await db.delete(params).promise()
   } catch (err) {
     return err
   }
@@ -15,10 +15,9 @@ async function createData(id, data) {
 
 export default async (event) => {
   try {
-    const id = context.awsRequestId
-    const data = event.body
-    await createData(id, data)
-    return id
+    const id = event.pathParameters.id
+    await deleteData(id)
+    return 'Data deleted from table'
   } catch (err) {
     return { error: err }
   }

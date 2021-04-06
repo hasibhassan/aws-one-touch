@@ -1,4 +1,4 @@
-service: sls-template # refactor
+service: simpleCrudApp
 
 provider:
   name: aws
@@ -7,7 +7,7 @@ provider:
   iam:
     role: ${opt:aws_role_arn}
   stackTags:
-    slsTemplate: value1 # refactor
+    slsApp: simpleCrud
 
 plugins:
   - serverless-webpack
@@ -15,8 +15,9 @@ plugins:
 
 functions:
   create: ${file(src/functions/create/function.yml):create}
-  # get: ${file(src/functions/get/function.yml):get}
-  # delete: ${file(src/functions/delete/function.yml):delete}
+  delete: ${file(src/functions/delete/function.yml):delete}
+  read: ${file(src/functions/get/function.yml):read}
+  update: ${file(src/functions/update/function.yml):update}
 
 custom:
   webpack:
@@ -29,5 +30,6 @@ custom:
 
 package:
   individually: true
-# resources:
-#   - ${file(src/resources/dynamodb.yml)}
+
+resources:
+  - ${file(src/resources/dynamodb.yml)}

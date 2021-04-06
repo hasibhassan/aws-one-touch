@@ -1,5 +1,5 @@
 Resources:
-  slsTable: # refactor
+  simpleCrudTable:
     Type: AWS::DynamoDB::Table
     Properties:
       AttributeDefinitions:
