@@ -2,7 +2,7 @@ read:
   handler: src/functions/read/index.default
   events:
     - httpApi:
-        method: GET
+        method: PUT
         path: /{id}
   environment:
     TABLE_NAME: !Ref SimpleCrudTable
