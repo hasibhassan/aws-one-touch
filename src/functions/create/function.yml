@@ -1,4 +1,7 @@
 create:
   handler: src/functions/create/index.default
-  # events:
+  events:
+    - httpApi:
+      method: POST
+      path: /
   # environment:
