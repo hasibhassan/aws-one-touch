@@ -1,4 +1,4 @@
-service: simpleCrudApp
+service: simple-crud
 
 provider:
   name: aws
