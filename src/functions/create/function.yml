@@ -1,0 +1,4 @@
+create:
+  handler: src/functions/create/index.default
+  # events:
+  # environment:
