@@ -5,4 +5,4 @@ create:
         method: POST
         path: /
   environment:
-    TABLE_NAME: !Ref ArtileTable
+    TABLE_NAME: !Ref SimpleCrudTable

@@ -24,4 +24,4 @@ jobs:
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci --ignore-scripts
-      - run: ./node_modules/.bin/serverless deploy
+      - run: ./node_modules/.bin/serverless deploy --aws_role_arn ${{ secrets.SERVERLESS_ROLE }}

@@ -5,4 +5,4 @@ get:
         method: PUT
         path: /{id}
   environment:
-    TABLE_NAME: !Ref ArtileTable
+    TABLE_NAME: !Ref SimpleCrudTable
