@@ -1,5 +1,5 @@
 Resources:
-  SimpleCrudTable:
+  SimpleCrudTable: // TODO
     Type: AWS::DynamoDB::Table
     Properties:
       AttributeDefinitions:

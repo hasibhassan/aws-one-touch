@@ -1,13 +1,13 @@
-service: simple-crud
+service: simple-crud // TODO
 
 provider:
   name: aws
   runtime: nodejs14.x
   lambdaHashingVersion: 20201221
   iam:
-    role: ${opt:aws_role_arn}
+    role: ${opt:aws_role_arn} // TODO
   stackTags:
-    slsApp: simpleCrud
+    slsApp: simpleCrud // TODO
 
 plugins:
   - serverless-webpack
