@@ -1,5 +1,5 @@
 Resources:
-  SimpleCrudTable:
+  ArtileTable:
     Type: AWS::DynamoDB::Table
     Properties:
       AttributeDefinitions:

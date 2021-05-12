@@ -1,13 +1,11 @@
-service: simple-crud
+service: artile
 
 provider:
   name: aws
   runtime: nodejs14.x
   lambdaHashingVersion: 20201221
-  iam:
-    role: ${opt:aws_role_arn}
   stackTags:
-    slsApp: simpleCrud
+    slsApp: artile
 
 plugins:
   - serverless-webpack

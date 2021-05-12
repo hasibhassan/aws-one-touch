@@ -5,4 +5,4 @@ update:
         method: POST
         path: /{id}
   environment:
-    TABLE_NAME: !Ref SimpleCrudTable
+    TABLE_NAME: !Ref ArtileTable
