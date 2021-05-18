@@ -13,10 +13,10 @@ async function createData(id, data) {
   }
 }
 
-export default async (event) => {
+export default async (event, context) => {
   try {
     const id = context.awsRequestId
-    const data = event.body
+    const data = JSON.parse(event.body)
     await createData(id, data)
     return id
   } catch (err) {
