@@ -1,13 +1,13 @@
-service: simple-crud // TODO
+service: simple-crud
 
 provider:
   name: aws
   runtime: nodejs14.x
   lambdaHashingVersion: 20201221
   iam:
-    role: ${opt:aws_role_arn} // TODO
+    role: ${opt:aws_role_arn}
   stackTags:
-    slsApp: simpleCrud // TODO
+    slsApp: simple-crud
 
 plugins:
   - serverless-webpack
@@ -33,3 +33,7 @@ package:
 
 resources:
   - ${file(src/resources/dynamodb.yml)}
+# TODO
+# SEARCH AND REPLACE THE FOLLOWING:
+# 1. service property in this file (simple-crud)
+# 2. Table name in resources/dynamodb.yml (SimpleCrudTable)
