@@ -5,11 +5,9 @@ async function deleteItem(id) {
   const params = {
     TableName: process.env.TABLE_NAME,
     Key: { id },
-    ReturnValues: 'ALL_NEW',
   }
   try {
-    const deletedItem = await db.delete(params).promise()
-    return deletedItem
+    await db.delete(params).promise()
   } catch (err) {
     return err
   }
@@ -17,9 +15,8 @@ async function deleteItem(id) {
 
 export default async (event) => {
   try {
-    const pathId = event.pathParameters.id
-    const returnedData = await deleteItem(pathId)
-    return returnedData
+    await deleteItem(event.pathParameters.id)
+    return `item with id: ${event.pathParameters.id} deleted!`
   } catch (err) {
     return { error: err }
   }
