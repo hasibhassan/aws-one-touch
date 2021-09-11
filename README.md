@@ -1,4 +1,4 @@
-# Simple Crud
+# Simple Crud &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)] [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)]
 
 A simple, one-click deploy, CRUD backend for web and mobile apps. Uses the Serverless Framework to deploy to AWS and Webpack under the hood to minify the source code for AWS Lambda to be more cost-effective and performant.
 
